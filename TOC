@@ -1,0 +1,39 @@
+Tentative Course Outline
+------------------------
+
+Week 0 - Getting started (no exercises)
+* Getting started
+* REPL
+* Functional Programming
+
+Some more links on getting started (like ClojureX) and some links to HOWTOs on setting up Emacs and such should
+also be included.
+
+Week 1 - The basics
+* Clojure Overview
+* Clojure Syntax
+* Bindings
+* Defining functions
+* Destructuring
+
+Week 2 - Data
+* Collections
+* StructMaps
+* Sequences
+* Concurrency
+* Reference Types
+
+Week 3 - Control Flow
+* Conditional Processing
+* Iteration
+* Recursion
+* Predicates
+* Input/Output
+
+Week 4 - Advanced topics and tying it all together
+* Namespaces
+* Metadata
+* Macros
+* Java Interoperability
+* AOT Compiling
+
