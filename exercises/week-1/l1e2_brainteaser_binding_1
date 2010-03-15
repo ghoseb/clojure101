@@ -1,0 +1,9 @@
+Look at the following Clojure code and try to guess the value of "y" inside
+the let and binding forms. Once you are done use the REPL to verify your
+answers.
+
+(def x 1)
+(def y 1)
+(let [x 5 y x] y)     
+(binding [x 5 y x] y)
+

@@ -1,0 +1,11 @@
+Looking at the following snippet, can you predict the output of both
+binding forms? Use the REPL to check your answers.
+
+(defn foo [& args] (apply println "Foo! =>" args))
+(defn bar [& args] (apply println "Bar! =>" args))
+
+(binding [foo bar]
+  (foo 1 2 3))
+
+((binding [foo bar]
+   #(foo 1 2 3)))
