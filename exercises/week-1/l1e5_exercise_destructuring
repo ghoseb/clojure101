@@ -1,3 +1,71 @@
-TODO: waiting for Daniel
+Destructuring
+=============
+
+For this exercise, you will be modifying the file 'book_list.clj'.  This is a
+simple Clojure program that prints the top ten Amazon best-selling books on 16
+March 2010.  Do not worry about any forms you do not understad, you will only be
+modifying the print-book function.
 
 
+1.1 Destructuring a map
+-----------------------
+
+Note how the author, title, and price are accessed by using the book map as a
+function.  This function would be more concise if the book argument were
+destructured into corresponding symbols.  Rewrite print-book as follows with
+the appropriate destructuring.
+
+(defn print-book
+  "Prints out information about a book."
+  [ {var-name :key-name, ... } ]                ; <- add destructuring here
+  (println "Title:" title)
+  (println "  Author: " (comma-sep authors))
+  (println "  Price:" (money-str price)))
+
+
+1.2 Destructuring a map using :keys
+-----------------------------------
+
+Now refine the print-book function to use the ':keys' method to destructure the
+map.
+
+
+2.1 Destructuring a vector
+--------------------------
+
+The requirements have changed, and now any book with three or more authors
+needs to be printed out as 'First Author, Second Author, et. al.'  Modify
+print-book as follows and destructure the authors vector.
+
+(defn print-book
+  "Prints out information about a book."
+  [{:keys ... }]                                ; <- contains destructuring from 1.2
+  (println "Title:" title)
+  (let [... authors]                            ; <- add destructuring of authors here
+    (println "  Author:" (comma-sep
+                           (filter seq [first
+                                        second
+                                        (when more "et. al.")]))))
+  (println "  Price:" (money-str price)))
+
+
+2.2 Destructuring with :as
+--------------------------
+
+The requirements change yet again—now the print-book function must output a
+Clojure reader-compatible representation of the book map as 'Raw'.  Use ':as'
+in your destructuring to capture the entire function argument as 'book' in the
+revised function below:
+
+
+(defn print-book
+  "Prints out information about a book."
+  [{:keys ... }]                                ; <- contains destructuring from 1.2
+  (println "Title:" title)
+  (let [... authors]                            ; <- contains destructuring from 2.1
+    (println "  Author:" (comma-sep
+                           (filter seq [first
+                                        second
+                                        (when more "et. al.")]))))
+  (println "  Price:" (money-str price))
+  (println "  Raw:" (pr-str book)))
