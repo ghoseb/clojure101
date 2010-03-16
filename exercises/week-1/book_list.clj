@@ -52,23 +52,11 @@
 (def #^{:doc "Formats a double value that is a currency."}
   money-str #(.format (java.text.NumberFormat/getCurrencyInstance) %))
 
-;(defn print-book
-;  "Prints out information about a book."
-;  [book]
-;  (println "Title:" (book :title))
-;  (println "  Author: " (comma-sep (book :authors)))
-;  (println "  Price:" (money-str (book :price))))
-
 (defn print-book
   "Prints out information about a book."
-  [{:keys [title authors price] :as book}]
-  (println "Title:" title)
-  (let [[first second & more] authors]
-    (println "  Author:" (comma-sep
-                           (filter seq [first
-                                        second
-                                        (when more "et. al.")]))))
-  (println "  Price:" (money-str price))
-  (println "  Raw:" (pr-str book)))
+  [book]
+  (println "Title:" (book :title))
+  (println "  Author: " (comma-sep (book :authors)))
+  (println "  Price:" (money-str (book :price))))
 
 (dorun (map print-book best-sellers))
