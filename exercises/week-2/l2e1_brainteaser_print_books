@@ -1,0 +1,14 @@
+Remember the print-book function you refined to perfection last week,
+then used to print out the information on several books?  Now, it would
+be nice to be able to use it to print information on some books with
+a short summary -- a count perhaps -- added at the end.  Here's an
+attempt at writing a function to accomplish that:
+
+(defn print-books [& books]
+  (map print-book books)
+  (print   "\n=============\n")
+  (println "Printed information on"
+           (count books)
+           "books."))
+
+Do you see any problems with this code?
