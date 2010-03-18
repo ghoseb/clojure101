@@ -1,3 +1,8 @@
+(ns #^{:doc "The code for exercise 5 of week 1 of the RubyLearning.org 
+            Clojure 101 course."
+       :author "Daniel Solano Gómez"}
+  book-list)
+
 (defstruct #^{:doc "Basic structure for book information."}
   book :title :authors :price)
 
@@ -59,4 +64,5 @@
   (println "  Author: " (comma-sep (book :authors)))
   (println "  Price:" (money-str (book :price))))
 
-(dorun (map print-book best-sellers))
+(doseq [book best-sellers]
+  (print-book book))
