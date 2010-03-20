@@ -1,0 +1,10 @@
+Deciding to stalk Clojure 101's mentors you had a look at the weather in their respective cities and this is what you ended up with (temperatures in degrees Fahrenheit):
+
+(def cities [{:city "Vienna" :temp 55} {:city "Krakow" :temp 52} {:city "Pune" :temp 85} {:city "Houston" :temp 57}])
+
+Unfortunately your teachers found out you are stalking them and are jumping on the opportunity to make this an exercise ;-)
+
+(1) Write a program that outputs the average temperature of the above cities rounded to 2 decimal places. 
+(2) Since two of the four cities are in Europe, also add a function to convert temperatures between Fahrenheit to Celsius. 
+
+(Hint: have a look at the documentation for the 'map' and 'reduce' forms, they may come in handy for this exercise.)
