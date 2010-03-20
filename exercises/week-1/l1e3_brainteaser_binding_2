@@ -1,11 +1,11 @@
 Looking at the following snippet, can you predict the output of both
 binding forms? Use the REPL to check your answers.
 
-(defn foo [& args] (apply println "Foo! =>" args))
-(defn bar [& args] (apply println "Bar! =>" args))
+(defn method-one [& args] (apply println "Inside method #1 =>" args))
+(defn method-two [& args] (apply println "Inside method #2 =>" args))
 
-(binding [foo bar]
-  (foo 1 2 3))
+(binding [method-one method-two]
+  (method-one 1 2 3))
 
-((binding [foo bar]
-   #(foo 1 2 3)))
+((binding [method-one method-two]
+   #(method-one 1 2 3)))

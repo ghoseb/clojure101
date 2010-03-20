@@ -3,7 +3,7 @@ Destructuring
 
 For this exercise, you will be modifying the file 'book_list.clj'.  This is a
 simple Clojure program that prints the top ten Amazon best-selling books on 16
-March 2010.  Do not worry about any forms you do not understad, you will only be
+March 2010. Do not worry about any forms you do not understand, you will only be
 modifying the print-book function.
 
 
@@ -12,7 +12,7 @@ modifying the print-book function.
 
 Note how the author, title, and price are accessed by using the book map as a
 function.  This function would be more concise if the book argument were
-destructured into corresponding symbols.  Rewrite print-book as follows with
+destructured into corresponding symbols. Rewrite print-book as follows with
 the appropriate destructuring.
 
 (defn print-book
@@ -52,8 +52,8 @@ print-book as follows and destructure the authors vector.
 2.2 Destructuring with :as
 --------------------------
 
-The requirements change yet again—now the print-book function must output a
-Clojure reader-compatible representation of the book map as 'Raw'.  Use ':as'
+The requirements change yet again! Now the print-book function must output a
+Clojure reader compatible representation of the book map as 'Raw'. Use ':as'
 in your destructuring to capture the entire function argument as 'book' in the
 revised function below:
 

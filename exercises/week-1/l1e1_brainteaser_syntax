@@ -3,7 +3,6 @@ difference between the two forms. Why does the first one raise an exception
 and what does the error message mean?
 
 user=> (1 2 3)
-java.lang.ClassCastException: java.lang.Integer cannot be cast to
-clojure.lang.IFn (NO_SOURCE_FILE:0)
+java.lang.ClassCastException: java.lang.Integer cannot be cast to clojure.lang.IFn (NO_SOURCE_FILE:0)
 user=> '(1 2 3)
 (1 2 3)
