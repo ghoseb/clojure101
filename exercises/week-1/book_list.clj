@@ -63,6 +63,3 @@
   (println "Title:" (book :title))
   (println "  Author: " (comma-sep (book :authors)))
   (println "  Price:" (money-str (book :price))))
-
-(doseq [book best-sellers]
-  (print-book book))

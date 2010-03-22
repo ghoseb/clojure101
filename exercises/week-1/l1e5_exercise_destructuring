@@ -6,6 +6,24 @@ simple Clojure program that prints the top ten Amazon best-selling books on 16
 March 2010. Do not worry about any forms you do not understand, you will only be
 modifying the print-book function.
 
+In order to use the program from the REPL, make sure the 'book_list.clj' is in
+your classpath.  From the REPL, you can execute the follwoing to load the
+module and see the results:
+
+user=> (use 'book-list)
+nil
+user=> (map print-book best-sellers)
+(Title: The Big Short
+  Author:  Michael Lewis
+  Price: $15.09
+...
+
+If you choose to edit the file externally, it can be reloaded using the
+following command:
+
+user=> (require :reload 'book-list)
+nil
+
 
 1.1 Destructuring a map
 -----------------------
