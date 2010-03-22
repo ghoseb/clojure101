@@ -5,8 +5,8 @@ Suppose that you have two Refs:
 
 Depending on some circumstance or other, you might want to increase
 the value of either one; however, the sum is never to exceed 3.
-Here's a function you might use in a transaction to see whether its ok
-to increase one of them:
+Here's a function you might use in a transaction to see whether it is
+ok to increase one of them:
 
     (defn ok-to-inc? [x y]
       (< (+ x y) 3))
