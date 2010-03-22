@@ -1,0 +1,32 @@
+Suppose that you have two Refs:
+
+    (def x (ref 1))
+    (def y (ref 1))
+
+Depending on some circumstance or other, you might want to increase
+the value of either one; however, the sum is never to exceed 3.
+Here's a function you might use in a transaction to see whether its ok
+to increase one of them:
+
+    (defn ok-to-inc? [x y]
+      (< (+ x y) 3))
+
+And here is a piece of code which will exercise the above:
+
+    (future
+     (dosync
+      (let [xv @x
+            yv @y]
+        (if (ok-to-inc? xv yv)
+          (alter x inc)))))
+
+    (future
+     (dosync
+      (let [xv @x
+            yv @y]
+        (if (ok-to-inc? xv yv)
+          (alter y inc)))))
+
+Do you see the problem with this code?  Can you modify it slightly to
+force the problem to exhibit itself?  How would you go about
+correcting it?
