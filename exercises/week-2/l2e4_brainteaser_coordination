@@ -19,6 +19,8 @@ And here is a piece of code which will exercise the above:
        (dosync
         (let [xv @x
               yv @y]
+          ;; let's take a 1 second nap...
+          (Thread/sleep 1000)
           (if (ok-to-inc? xv yv)
             (alter x inc)))))
   
@@ -26,9 +28,9 @@ And here is a piece of code which will exercise the above:
        (dosync
         (let [xv @x
               yv @y]
+          (Thread/sleep 1000)
           (if (ok-to-inc? xv yv)
             (alter y inc))))))
 
-Do you see the problem with this code?  Can you modify it slightly to
-force the problem to exhibit itself?  How would you go about
+Do you see the problem with this code?  How would you go about
 correcting it?
