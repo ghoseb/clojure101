@@ -13,19 +13,21 @@ to increase one of them:
 
 And here is a piece of code which will exercise the above:
 
-    (future
-     (dosync
-      (let [xv @x
-            yv @y]
-        (if (ok-to-inc? xv yv)
-          (alter x inc)))))
+    (do
 
-    (future
-     (dosync
-      (let [xv @x
-            yv @y]
-        (if (ok-to-inc? xv yv)
-          (alter y inc)))))
+      (future
+       (dosync
+        (let [xv @x
+              yv @y]
+          (if (ok-to-inc? xv yv)
+            (alter x inc)))))
+  
+      (future
+       (dosync
+        (let [xv @x
+              yv @y]
+          (if (ok-to-inc? xv yv)
+            (alter y inc))))))
 
 Do you see the problem with this code?  Can you modify it slightly to
 force the problem to exhibit itself?  How would you go about
