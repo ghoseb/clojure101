@@ -63,3 +63,7 @@
   (println "Title:" (book :title))
   (println "  Author: " (comma-sep (book :authors)))
   (println "  Price:" (money-str (book :price))))
+
+(comment
+  (use 'book-list)
+  (map println best-sellers))
