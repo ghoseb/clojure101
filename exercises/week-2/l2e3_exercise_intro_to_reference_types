@@ -1,0 +1,75 @@
+Intro to reference types
+========================
+
+With the new constructs introduced this week, it should be possible
+for us to build on last week's destructuring exercise and turn its
+code into a reasonable first approximation to an application one might
+use for managing one's personal library.  (A few bits will remain for
+weeks 3 & 4, but in doing the next several exercises, you should
+definitely start seeing the general shape of the app come together!)
+
+
+Exercise goals
+--------------
+
+Upon completion of this exercise, you should have a body of code which
+should allow you to store a collection of books in memory, add and
+remove books from said collection and query the collection for books
+matching simple criteria (e.g. a books-by-author query should be doable).
+
+
+Basic design
+------------
+
+The first order of business is to put the collection of books in
+memory somewhere while making it possible to manipulate it (add and
+remove books, amend book data etc.).  This involves at least two
+design choices:
+
+ 1. The choice of the correct reference type to use.
+
+ 2. The choice of the correct type of collection to hold the book
+   data.
+
+   Note that while last week's exercise used a vector of StructMaps,
+   that vector was meant to hold a best-sellers list, which has an
+   intrinsic order.  Your personal book collection might be different
+   in this regard.  So, give some consideration to the choice of
+   collection type.
+
+In addition to this, consider the basic StructMap used for storing
+information on books.  If you feel that a slightly different structure
+would be more appropriate for a personal library app, feel free to
+provide a definition of one.
+
+
+Functional abstraction
+----------------------
+
+Having prepared an initial design for the foundations of the library
+management app, provide definitions for functions to be called as below:
+
+    (add-book book)
+    ; OR
+    (add-book book-coll book)
+
+    (remove-book book)
+    ; OR
+    (remove-book book-coll book)
+
+Note that the calls which omit the book-coll argument should probably
+use some default value.  Support one of the two argument signatures or
+both; in either case, be prepared to provide a short discussion of
+your choice.  What designs can you think of to support both kinds of
+calls with as little code duplication as possible?
+
+
+Basic queries
+-------------
+
+With the above code ready, show how you would go about the following:
+
+ 1. obtaining a collection of books authored by a particular
+   individual;
+
+ 2. obtaining a count of all books authored by more than one person.
