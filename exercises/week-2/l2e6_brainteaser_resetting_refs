@@ -1,0 +1,14 @@
+In experimenting with complicated transaction patterns, it might be
+useful to write a one-off function to reset all Refs involved to some
+useful initial state.  An attempt at writing such a function could
+look as follows:
+
+    (defn reset-stuff []
+      (dosync
+       (map ref-set
+            [x y z] ; could pass in some arguments, of course
+            [1 2 3])))
+
+Assuming that the symbols 'x, 'y and 'z all resolve to Refs in the
+current namespace, what do you think would happen after a call to
+reset-stuff?
