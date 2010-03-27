@@ -40,7 +40,15 @@ design choices:
 In addition to this, consider the basic StructMap used for storing
 information on books.  If you feel that a slightly different structure
 would be more appropriate for a personal library app, feel free to
-provide a definition of one.
+provide a definition of one.  Do keep in mind, though, that StructMaps
+can have additional keys `conj`ed onto them, so if you think there is
+some type of information which you will likely only want to attach to
+a limited number of books, it is probably a good idea not to include
+it in the book StructMap itself.  As a baseline book StructMap, let us
+use the one from last week minus the `:price` key (it might be
+difficult to attach a price to every book in one's personal library!):
+
+    (defstruct book :title :authors)
 
 
 Functional abstraction
@@ -62,14 +70,3 @@ use some default value.  Support one of the two argument signatures or
 both; in either case, be prepared to provide a short discussion of
 your choice.  What designs can you think of to support both kinds of
 calls with as little code duplication as possible?
-
-
-Basic queries
--------------
-
-With the above code ready, show how you would go about the following:
-
- 1. obtaining a collection of books authored by a particular
-   individual;
-
- 2. obtaining a count of all books authored by more than one person.
