@@ -1,0 +1,9 @@
+You are teaching a Clojure course at uni and the exam software returns a vector consisting of 0 (exam failed) or 1 (exam passed).
+Write a Clojure program that will generate the following output: "x/y students passed (zz.zz%)"
+
+Use the following result vector:
+
+(def results [0 0 0 1 0 1 1 1 1 0 1 1 0 1 0 0 1 1 1 0 0 1 0 1])
+
+To solidify what we learned in this week's lessons, try to write two versions, one using a loop to iterate through the array an
+one using filter. What do you prefer, the imperative or the functional approach?

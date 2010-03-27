@@ -1,0 +1,11 @@
+In this exerise you will implement the "Deaf Grandma" program as seen in Chris Pine's book "Learn to Program": 
+write a program that let's you talk to your virtual grandmother. Whatever you say (type), Granny will respond 
+with "HUH?! SPEAK UP, SONNY!", unless you shout (type in all capitals). If you shout, she'll hear you (or at
+least pretend to) and yell back "NO, NOT SINCE <random year between 1930 and 1950>!". Your conversation with
+granny ends once you shout "BYE".
+
+Feel free to experiment with everything we have learned in this chapter to structure your program. Once you are
+satisfied with your solution, modify it so you have to shout "BYE" three times in a row until granny finally
+let's you go ("BYEBYEBYE" or "BYE BYE BYE" do not count).
+
+
