@@ -66,4 +66,4 @@
 
 (comment
   (use 'book-list)
-  (map println best-sellers))
+  (map print-book best-sellers))
