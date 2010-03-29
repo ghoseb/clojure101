@@ -37,14 +37,24 @@ design both Refs and Atoms could conceivably be used.  (Do you see why
 that is?)  Pick one approach, define your Atom / Ref(s), then define
 the functions to be called as follows:
 
-    (add-loan item) ; possibly with keyword arguments, e.g. :return-by
+    (add-loan person item)
 
-    (accept-return item)
+    (accept-return person item)
 
-`item` should be a map containing enough information to identify the
-object being loaned (a primary key); for our purposes the title
-together with the list of authors (`{:title "..." :authors [...]}`)
-will be acceptable.
+`add-loan` should accept optional keyword arguments:
+
+    (add-loan person item :return-by some-date)
+
+Feel free to handle other types of information you might find useful.
+(An actual library would likely want to count 'renewals' etc.)  The
+suggested approach to storing loan information for this exercise is to
+
+    (assoc item :loan-data {:person "..." ...})
+
+The `item` argument to `add-loan` and `accept-return` should be a map
+containing enough information to identify the object being loaned (a
+primary key); for our purposes the title together with the list of
+authors (`{:title "..." :authors [...]}`) will be acceptable.
 
 Would data integrity be preserved if your functions were being called
 simultaneously by multiple threads?  (For instance, is there any
