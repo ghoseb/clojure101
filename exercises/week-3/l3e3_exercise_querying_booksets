@@ -4,12 +4,12 @@ Querying booksets
 In this exercise, we will be querying the collection of books
 maintained by our personal library app from weeks 1 & 2.
 
-
-Basic queries
--------------
-
 For starters, please write code to accomplish the following:
 
  1. obtain a collection of books authored by a particular individual;
 
  2. obtain a count of all books authored by more than one person.
+
+How would you go about discovering whether there is a person having at
+least 3 overdue items on loan from your library (and if so, then who
+might it be)?
