@@ -1,0 +1,63 @@
+Parsing log files
+=================
+
+Let's do some log file processing!
+
+Suppose that a background process running on your box periodically
+writes the list of running processes to a log file which looks like
+this:
+
+    ### username 2010-03-30 03:50:00 ###
+    USER         COMM        PID      PPID   %CPU %MEM       TIME
+    root         initd         1         0    0.0  0.0    1:30.26
+    root         somed        11         1    0.0  0.0    1:35.31
+    root         someotherd   12         1    0.0  0.0    1:36.48
+    ...
+    username     aprog      1345      1208   10.8  7.0    2:47.13
+    ...
+    
+    ### username 2010-03-30 04:00:00 ###
+    USER         COMM       PID      PPID   %CPU %MEM       TIME
+    root         initd        1         0    0.0  0.0    1:30.26
+    root         somed       11         1    0.0  0.0    1:35.31
+    ...
+
+There are all sorts of ways one could want to process that data.  In
+this exercise, we will perform the first step: extracting the basic
+pieces of information.
+
+
+Task description
+----------------
+
+Your task will be to come up with a way to do basic parsing of the
+above log file, so that from the text above you can obtain the
+following sequence:
+
+    (("username" "2010-03-30" "03:50:00" "root" "initd" "1" "0" "0.0" "0.0" "1:30.26")
+     ("username" "2010-03-30" "03:50:00" "root" "somed" "11" "1" "0.0" "0.0" "1:35.31")
+     ("username" "2010-03-30" "03:50:00" "root" "someotherd" "12" "1" "0.0" "0.0" "1:36.48")
+     ("username" "2010-03-30" "03:50:00" "username" "aprog" "1345" "1208" "10.8" "7.0" "2:47.13")
+     ("username" "2010-03-30" "04:00:00" "root" "initd" "1" "0" "0.0" "0.0" "1:30.26")
+     ("username" "2010-03-30" "04:00:00" "root" "somed" "11" "1" "0.0" "0.0" "1:35.31")
+     ...)
+
+Note how you don't need to process the fields in any way; leaving them
+as strings is fine.  On the other hand, the information extracted from
+each of the 'header lines' should be attached to the information
+extracted from the corresponding 'data lines'.
+
+Try to make your solution modular, easily tweakable (perhaps to
+accommodate changes in the format of the log file) etc.
+
+
+Acknowledgements
+----------------
+
+This exercise is inspired by a Stack Overflow question from a while
+ago.  (Which now includes at least two different possible solutions to
+the problem.)
+
+For the ultimate write-up on Clojure log file parsing, see Alex
+Osborne's [Widefinder 2 with
+Clojure](http://meshy.org/2009/12/13/widefinder-2-with-clojure.html).
