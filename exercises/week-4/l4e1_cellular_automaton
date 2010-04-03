@@ -1,0 +1,3 @@
+[Cellular automata](http://en.wikipedia.org/wiki/Cellular_automaton) are fun and fairly easy to implement. In this exercise you will build [Conway's Game of Life](http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) in Clojure with a Swing GUI.
+
+Be creative and feel free to use everything we have learned so far. In case you get stuck, have a look at Lau Jensen's article [Brians functional brain](http://www.bestinclass.dk/index.php/2009/10/brians-functional-brain/) explaining how to implement [Brian's Brain](http://en.wikipedia.org/wiki/Brian%27s_Brain) in Clojure.
