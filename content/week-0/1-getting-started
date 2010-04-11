@@ -1,0 +1,26 @@
+Getting started with Clojure
+============================
+
+Getting started with Clojure might not be the most straightforward experience yet, so here are a few pointers that might prove helpful:
+
+* [Clojure.org - Getting Started](http://clojure.org/getting_started)
+* [Wikibooks - Clojure Programming/Getting Started](http://clojure.org/getting_started)
+* [ClojureX](http://github.com/citizen428/ClojureX)
+* [labrepl](http://github.com/relevance/labrepl)
+
+Lately [Stuart Halloway](http://blog.thinkrelevance.com/tags/clojure) put a lot of effort in providing the Clojure community with definitive guides for getting started with the various editors and build tools available:
+
+* [Getting Started with Netbeans and Enclojure](http://www.assembla.com/wiki/show/clojure/Getting_Started_with_Netbeans_and_Enclojure)
+* [Getting Started with Eclipse and Counterclockwise](http://www.assembla.com/wiki/show/clojure/Getting_Started_with_Eclipse_and_Counterclockwise)
+* [Getting Started with Idea and La Clojure](http://www.assembla.com/wiki/show/clojure/Getting_Started_with_Idea_and_La_Clojure)
+* [Getting Started with Emacs](http://www.assembla.com/wiki/show/clojure/Getting_Started_with_Emacs)
+* [Getting Started with Vim](http://www.assembla.com/wiki/show/clojure/Getting_Started_with_Vim)
+* [Getting Started with Leiningen](http://www.assembla.com/wiki/show/clojure/Getting_Started_with_Leiningen)
+* [Getting Started with Maven](http://www.assembla.com/wiki/show/clojure/Getting_Started_with_Maven)
+
+Last but not least a couple of options to stay up to date with what's happening in the Clojure community:
+
+* [Clojure Google Group](http://groups.google.com/group/clojure)
+* [The #clojure IRC channel on Freenode](irc://irc.freenode.net/#clojure)
+* [Planet Clojure](http://planet.clojure.in/)
+ 
