@@ -8,6 +8,7 @@ Getting started with Clojure might not be the most straightforward experience ye
 * [ClojureX](http://github.com/citizen428/ClojureX)
 * [labrepl](http://github.com/relevance/labrepl)
 * [Emacs Starter Kit](http://github.com/technomancy/emacs-starter-kit)
+* [Clojure Box for Windows](http://clojure.bighugh.com/)
 
 Lately [Stuart Halloway](http://blog.thinkrelevance.com/tags/clojure) put a lot of effort in providing the Clojure community with definitive guides for getting started with the various editors and build tools available:
 
