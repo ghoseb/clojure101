@@ -1,0 +1,18 @@
+Making the library persistent
+=============================
+
+Back to the personal library app series, let us tackle the problem of saving library data to a permanent storage location.  The available options include some form of flat file storage and various DBMSs.
+
+
+Exercise goals
+--------------
+
+When you complete this exercise, you should have the internals of a personal library app ready for use and waiting for a front-end.
+
+
+Implementation
+--------------
+
+Both flat file persistence and DB access can be handled with Java interop facilities as well as through numerous libraries offering idiomatic APIs on the Clojure side.  See `clojure.contrib.java-utils`, `clojure.contrib.duck-streams` (after the 1.1 release of Clojure, there has been some reorganisation of `clojure.contrib`; in particular, the libraries of interest when doing file IO are now called `c.c.java` and `c.c.io`), `clojure.contrib.sql` and such external projects as CongoMongo (for access to MongoDB), FleetDB (which is a document-oriented DB written in Clojure) etc.
+
+Take your pick of the permanent storage solution and write the code to facilitate its use in the library app.  You might be surprised to see how little code is necessary to accomplish this.
