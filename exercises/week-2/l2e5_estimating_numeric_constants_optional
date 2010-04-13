@@ -1,0 +1,104 @@
+NOTE: This exercise is optional! If you don't have enough time this week or
+feel the involved math is over your head, feel free to skip it.
+
+Sources
+-------
+
+This exercise has been inspired by the book [Structure and
+Interpretation of Computer Programs][1] by Harold Abelson and Gerald
+Jay Sussman with Julie Sussman.  The full text is available on the Web
+and licenced under a CC BY/NC licence and is highly recommended
+reading as a great introduction to Computer Science!  Of particular
+interest in connection to this exercise are sections 1.3 and 3.5,
+which include similar exercises.  Also, Sean Devlin's excellent video
+[Infinite Sequences][2] shows how certain numeric problems can be
+solved very elegantly using lazy sequences; familiarity with that
+material may be helpful.
+
+
+Estimating numeric constants
+----------------------------
+
+Quite a number of important constants in mathematics are known to be
+the limits of some alternating series.  Examples include π, e, ln 2
+etc.  Finding an appropriate series and proving that it converges to a
+particular constant is quite tricky; once such a series has been
+found, computing an approximation to the constant can be as simple as
+summing up a large number of initial terms of the series.  One problem
+with this approach is that oftentimes such series converge to the
+desired value with no great rapidity; one can, however, greatly speed
+up the process by applying the following simple technique (related to
+[Euler's transformation][3] and [van Wijngaarden's modified
+version][4] of it):
+
+ 1. the initial sequence is transformed into a sequence of its partial
+   sums;
+
+ 2. the partial sums sequence is repeatedly subjected to average
+   damping (the process whereby a sequence of numbers -- let it be
+   called 'input' -- is replaced by a sequence of averages of adjacent
+   terms of the input);
+
+ 3. an arbitrary cut-off point is chosen: after that many applications
+   of average damping, the first term of the resulting (thoroughly
+   average damped) sequence is used.
+
+This results in a much better approximation to the limit of the
+alternating series than simple calculation of partial sums.
+
+Here is an example (following the section called [Estimating π][5] of
+the Wikipedia π article):
+
+ 1. The Gregory-Leibniz series is defined as the (infinite) sum of
+   terms of the form
+
+   (-1)^n
+   ------
+   2n + 1
+
+   (that's $\frac{-1^n}{2n+1}$ for those who prefer TeX to ASCII art
+   fractions; or (/ (Math/pow -1 n) (inc (* 2 n))) in Clojure).
+
+   It has the interesting property that π is equal to four times its
+   limit.
+
+ 2. The initial terms are 4/1, -4/3, 4/5, -4/7, ...; thus the initial
+   sums are 4/1, (4/1 - 4/3), (4/1 - 4/3 + 4/5), ...
+
+ 3. Average damping the sequence of initial sums produces a sequence
+   of the form (4/1 + (4/1 - 4/3)) / 2,
+   ((4/1 - 4/3) + (4/1 - 4/3 + 4/5)) / 2 etc.
+
+ 4. The resulting transformation is also subjected to average damping,
+   as is the result of that step and so on.
+
+ 5. At some point during the process, we take the first element of the
+   sequence produced by the latest round of average damping and use it
+   as our approximation to π.
+
+For this exercise, please translate the above description into Clojure
+code.  Try to decouple the steps as much as possible; for example,
+transforming a sequence into a sequence of its partial sums should be
+performed by a separate function, as should a single round of average
+damping.
+
+Once you are done, please consider the following questions:
+
+ 1. Are your sequence operations lazy?
+
+ 2. Would you expect to be able to use your code to compute
+   arbitrarily good approximations?
+
+ 3. In which ways do you feel that the answers to (1) and (2) above
+   actually matter?
+
+Finally, if you feel like it, plug in some other alternating series to
+get some good approximations to other numeric constants, experiment
+with Sean's simple-converge function [from the video][2] etc.
+
+
+ [1]: http://mitpress.mit.edu/sicp/
+ [2]: http://vimeo.com/9460060
+ [3]: http://en.wikipedia.org/wiki/Euler_transform
+ [4]: http://en.wikipedia.org/wiki/Van_Wijngaarden_transformation
+ [5]: http://en.wikipedia.org/wiki/Pi#Estimating_.CF.80
