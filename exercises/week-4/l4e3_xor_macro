@@ -9,10 +9,10 @@ at the REPL by running:
     (source and)
 
 In this exercise you will write a macro for exclusive or, `xor`, that will
-return a value that evaluates to true if and only if one argument evaluates to
-true.  It should only evaluate as many forms as necessary to determine the
-result of the macro.  In other words, as soon as the second true value is
-found, the macro should stop.
+return a value that evaluates to true if and only if exactly one argument 
+evaluates to true.  It should only evaluate as many forms as necessary to 
+determine the result of the macro.  In other words, as soon as the second 
+true value is found, the macro should stop.
 
 You may modify the file `xor.clj`, which contains some tests to determine if
 your macro is behaving correctly.
@@ -35,7 +35,7 @@ the `unary` test and have it succeed.
 Step 3: Binary `xor`
 --------------------
 
-Now add an binary (two argument) form to `xor`.  You should be able to
+Now add a binary (two argument) form to `xor`.  You should be able to
 uncomment the `binary` test and have it succeed.
 
 
