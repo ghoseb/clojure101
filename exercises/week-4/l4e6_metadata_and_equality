@@ -1,0 +1,32 @@
+Metadata and Equality
+=====================
+
+Given the following vars:
+
+    (def some-val [2])
+    (def copy-val some-val)
+    (def #^{:magic-number 2} meta-val some-val)
+    (def meta-val-2 (with-meta some-val {:magic-number 2}))
+    (def meta-val-3 #^{:magic-number 2} some-val)
+
+How do you expect the following expression to evaluate?
+
+    (= some-val copy-val)
+    (= some-val meta-val)
+    (= some-val meta-val-2)
+    (= some-val meta-val-3)
+
+    (identical? some-val copy-val)
+    (identical? some-val meta-val)
+    (identical? some-val meta-val-2)
+    (identical? some-val meta-val-3)
+
+    (meta meta-val)
+    (meta meta-val-2)
+    (meta meta-val-3)
+
+    (:magic-number (meta #'meta-val))
+    (:magic-number (meta #'meta-val-2))
+    (:magic-number (meta #'meta-val-3))
+
+Explain why the expressions evaluate the way they do. 
