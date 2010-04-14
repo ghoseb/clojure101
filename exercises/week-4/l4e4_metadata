@@ -1,0 +1,34 @@
+Metadata
+========
+
+There a number of uses of metadata.  Clojure has a few standard metadata entries:
+
+* `:private`, an access control modifier
+* `:doc`, a documentation string
+* `:test`, a nullary function used for testing
+* `:tag`, a type hint for the compiler
+
+In addition, the compiler automatically adds a few entries to every var:
+
+* `:file`, a string describing the file where the var was defined
+* `:line`, the line number of where the var was defined in a file
+* `:name`, a symbol for the name of the var
+* `:ns`, the namespace in which the var is interned
+* `:macro`, whether or not the var is a macro
+* `:arglists`, a list of vectors of argument forms for the var
+
+In this exercies, we will use some of this metadata to find out more about
+Clojure.  You can get a map of all the public itern mappings for a namespace
+using the function `ns-publics`.  The value for each entry in the map is the
+var, which contains the above meta data.  Thus you can get a list of all of the
+vars in `clojure.core` using `(map val (ns-publics 'clojure.core))`.
+
+Using this list, find out:
+
+1. How many public vars are there in `clojure.core`?
+2. Of these, how many are macros?
+3. How many characters of documentation are there in `clojure.core`?
+4. How many of these vars have no line number?
+5. Of those that have line numbers, if you were to order them by line number,
+   which is the first? last? hundredth?
+6. What types of metadata appear that are not described above?
