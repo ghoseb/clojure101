@@ -61,7 +61,7 @@ print-book as follows and destructure the authors vector.
   (println "Title:" title)
   (let [... authors]                            ; <- add destructuring of authors here
     (println "  Author:" (comma-sep
-                           (filter seq [first
+                           (remove nil? [first
                                         second
                                         (when more "et. al.")]))))
   (println "  Price:" (money-str price)))
@@ -82,7 +82,7 @@ revised function below:
   (println "Title:" title)
   (let [... authors]                            ; <- contains destructuring from 2.1
     (println "  Author:" (comma-sep
-                           (filter seq [first
+                           (remove nil? [first
                                         second
                                         (when more "et. al.")]))))
   (println "  Price:" (money-str price))

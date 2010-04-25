@@ -1,0 +1,13 @@
+Metadata Brainteaser
+====================
+
+`defn-` is a macro that creates a named function, like `defn`, except that the
+resulting name is non-public, i.e. its metadata `:private` is set to `true``.
+There is no `def-` to create non-public vars, so a common idiom is to use
+something like:
+
+    (def #^{:private true} myvar "myvalue")
+
+1. What is the result of `(meta myvar)`?
+2. Is it what you expected?
+3. How do you get the result you expect?

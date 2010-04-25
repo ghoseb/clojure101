@@ -4,7 +4,7 @@ Fib(n) = round(Phi^n / sqrt(5))
 
 where Phi is defined as
 
-Phi = (1 + sqrt(5) / 2).
+Phi = (1 + sqrt(5)) / 2
 
 For simplicity's sake you can ignore n < 0. To see if your function works, compare it to the following REPL transcript:
 

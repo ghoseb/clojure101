@@ -1,0 +1,55 @@
+Writing a `xor` macro
+=====================
+
+Clojure implments `and` and `or` as macros.  You can see their implementation
+at the REPL by running:
+
+    (use 'clojure.contrib.repl-utils)
+    (source or)
+    (source and)
+
+In this exercise you will write a macro for exclusive or, `xor`, that will
+return a value that evaluates to true if and only if exactly one argument 
+evaluates to true.  It should only evaluate as many forms as necessary to 
+determine the result of the macro.  In other words, as soon as the second 
+true value is found, the macro should stop.
+
+You may modify the file `xor.clj`, which contains some tests to determine if
+your macro is behaving correctly.
+
+
+Step 1: Nullary `xor`
+---------------------
+
+Modify the macro stub to support the nullary (no argument) form of `xor`, which
+should return `nil`.  The `nullary` test should now succeed.
+
+
+Step 2: Unary `xor`
+-------------------
+
+Now add an unary (one argument) form to `xor`.  You should be able to uncomment
+the `unary` test and have it succeed.
+
+
+Step 3: Binary `xor`
+--------------------
+
+Now add a binary (two argument) form to `xor`.  You should be able to
+uncomment the `binary` test and have it succeed.
+
+
+Step 4: n-ary `xor`
+-------------------
+
+Now add an n-ary (variadic) form to `xor`.  You should be able to uncomment the
+`ternary` and `n-ary` tests and have them succeed.
+
+Congratulations!  You have now created a macro for logical exclusive or.
+
+
+Bonus Step
+----------
+
+Note the highly repetitive nature of the various tests.  Write a macro to
+eliminate much of the code duplication.
