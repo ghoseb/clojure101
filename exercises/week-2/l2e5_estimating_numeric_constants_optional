@@ -60,10 +60,12 @@ the Wikipedia π article):
    fractions; or (/ (Math/pow -1 n) (inc (* 2 n))) in Clojure).
 
    It has the interesting property that π is equal to four times its
-   limit.
+   limit.  We will use the series multiplied by 4 from now on; thus
+   the numerator in the above formula becomes 4 * (-1)^n.
 
- 2. The initial terms are 4/1, -4/3, 4/5, -4/7, ...; thus the initial
-   sums are 4/1, (4/1 - 4/3), (4/1 - 4/3 + 4/5), ...
+ 2. The initial terms of the quadrupled Gregory-Leibniz series are
+   4/1, -4/3, 4/5, -4/7, ...; thus the initial sums are 4/1,
+   (4/1 - 4/3), (4/1 - 4/3 + 4/5), ...
 
  3. Average damping the sequence of initial sums produces a sequence
    of the form (4/1 + (4/1 - 4/3)) / 2,
